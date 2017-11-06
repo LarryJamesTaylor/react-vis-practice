@@ -4,13 +4,19 @@ import './Legend.css';
 class Legend extends Component {
   render() {
     return (
-      <div>
-        <div className='orange'></div>
-        <p>Average Score</p>
-        <div className='first'></div>
-        <p>First Attempt</p>
-        <div className='second'></div>
-        <p>Second Attempt</p>
+      <div className='flex'>
+        <div className='pair'>
+          <div className='orange'></div>
+          <p className='keys'>Average Score</p>
+        </div>
+        <div className='pair'>
+          <div className='first'></div>
+          <p className='keys'>First Attempt</p>
+        </div>
+        <div className='pair'>
+          <div className='second'></div>
+          <p className='keys'>Second Attempt</p>
+        </div>
       </div>
     );
   }
