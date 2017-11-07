@@ -108,8 +108,21 @@ class App extends Component {
             <HorizontalGridLines />
             <XAxis tickTotal={6} tickFormat={x => `Quiz  ${x}`} tickLabelAngle={-38} />
             <YAxis tickTotal={10} tickFormat={y => `${y}%`} />
-            <VerticalBarSeries data={data} color="#007A7C"/>
-            <VerticalBarSeries data={second} color="#00FFFF"/>
+            <VerticalBarSeries data={data} color="#007A7C"
+              onNearestX={(datapoint, event)=>{
+                  console.log("whoa, data", datapoint.y);
+              }}
+              onValueClick={(datapoint, event)=>{
+                console.log("i'm going to route you");
+              }}/>
+            <VerticalBarSeries data={second} color="#00FFFF"
+              onNearestX={(datapoint, event)=>{
+                  console.log("whoa, data", datapoint.y);
+              }}
+              onValueClick={(datapoint, event)=>{
+                console.log("i'm going to route you");
+              }}
+            />
             <LineMarkSeries data={avg} color="orange" />
           </XYPlot>
         </div>
