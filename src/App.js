@@ -10,17 +10,19 @@ class App extends Component {
   constructor(){
     super();
     this.state = {
-      classData: {}
+      usedData: {},
+      unusedData: {}
     }
   }
 
   componentWillMount(){
-    this.getClassData();
+    this.getUsedData();
+    this.getUnusedData();
   }
 
-  getClassData(){
+  getUsedData(){
     this.setState({
-      usedChartData: {
+      usedData: {
         labels: ['40%-50%', '51%-60%', '61%-70', '71%-80', '81%-90%', '91%-100%'],
         datasets: [
           {
@@ -43,8 +45,13 @@ class App extends Component {
             ],
           }
         ]
-      },
-      unusedChartData: {
+      }
+    })
+  }
+
+  getUnusedData() {
+    this.setState({
+      unusedData: {
         labels: ['40%-50%', '51%-60%', '61%-70', '71%-80', '81%-90%', '91%-100%'],
         datasets: [
           {
@@ -114,7 +121,7 @@ class App extends Component {
           </XYPlot>
         </div>
         <Legend />
-        <PieChart classData={this.state.classData}/>
+        <PieChart usedData={this.state.usedData} unusedData={this.state.unusedData}/>
       </div>
     );
   }

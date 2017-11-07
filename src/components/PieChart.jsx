@@ -6,7 +6,8 @@ class PieChart extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      classData: props.classData
+      usedData: props.usedData,
+      unusedData: props.unusedData
     }
   }
 
@@ -16,7 +17,7 @@ class PieChart extends Component {
         <div>
           <h2>Used Self-Checks</h2>
           <Pie
-            data={this.state.usedChartData}
+            data={this.state.usedData}
             className='pieChart'
             options={
               {
@@ -32,7 +33,7 @@ class PieChart extends Component {
         <div>
           <h2>Didn't Use Self-Checks</h2>
           <Pie
-            data={this.state.unusedChartData}
+            data={this.state.unusedData}
             className='pieChart'
             options={
               {
