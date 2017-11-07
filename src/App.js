@@ -120,6 +120,7 @@ class App extends Component {
                   console.log("whoa, data", datapoint.y);
               }}
               onValueClick={(datapoint, event)=>{
+                <a href="https://www.youtube.com/watch?v=Sy5wpB8uT7Y">Mhm</a>
                 console.log("i'm going to route you");
               }}
             />
