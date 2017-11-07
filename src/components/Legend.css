@@ -1,5 +1,10 @@
 .flex {
   display: inline-flex;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  margin-bottom: 15px;
+  top: 92%;
 }
 .orange {
   height: 10px;

@@ -4,8 +4,73 @@ import './App.css';
 import '../node_modules/react-vis/dist/style.css';
 import {XYPlot, VerticalGridLines, HorizontalGridLines, XAxis, YAxis, VerticalBarSeries, LineMarkSeries} from 'react-vis';
 import Legend from './components/Legend';
+import PieChart from './components/PieChart';
 
 class App extends Component {
+  constructor(){
+    super();
+    this.state = {
+      classData: {}
+    }
+  }
+
+  componentWillMount(){
+    this.getClassData();
+  }
+
+  getClassData(){
+    this.setState({
+      usedChartData: {
+        labels: ['40%-50%', '51%-60%', '61%-70', '71%-80', '81%-90%', '91%-100%'],
+        datasets: [
+          {
+            label: 'Used Self-Check',
+            data: [
+              11,
+              19,
+              34,
+              67,
+              51,
+              14
+            ],
+            backgroundColor: [
+              'red',
+              'darkorange',
+              'yellow',
+              'magenta',
+              'royalblue',
+              'lime'
+            ],
+          }
+        ]
+      },
+      unusedChartData: {
+        labels: ['40%-50%', '51%-60%', '61%-70', '71%-80', '81%-90%', '91%-100%'],
+        datasets: [
+          {
+            label: 'Used Self-Check',
+            data: [
+              15,
+              23,
+              39,
+              60,
+              42,
+              9
+            ],
+            backgroundColor: [
+              'red',
+              'darkorange',
+              'yellow',
+              'magenta',
+              'royalblue',
+              'lime'
+            ]
+          }
+        ]
+      }
+    })
+  }
+
   render() {
     const data = [
       {x: 1, y: 56},
@@ -35,7 +100,7 @@ class App extends Component {
       <div className="App">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+          <h2>That Data-Vis Life</h2>
         </div>
         <div className="Chart">
           <XYPlot height={400} width={500}>
@@ -49,6 +114,7 @@ class App extends Component {
           </XYPlot>
         </div>
         <Legend />
+        <PieChart classData={this.state.classData}/>
       </div>
     );
   }

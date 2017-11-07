@@ -19,9 +19,11 @@
 }
 
 .Chart {
-  margin-left: 25%;
-  margin-right: 0;
+  margin-bottom: 800px;
   padding: 0;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
 }
 
 @keyframes App-logo-spin {

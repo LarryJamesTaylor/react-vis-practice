@@ -1,0 +1,16 @@
+.pieZone {
+  height: 240px;
+  width: 690px;
+  border: solid 1px;
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translate(-50%);
+  display: flex;
+}
+
+.pieChart {
+  height: 350px;
+  width: 250px;
+  flex-grow: 5;
+  }
