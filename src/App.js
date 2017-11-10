@@ -26,7 +26,6 @@ class App extends Component {
         labels: ['40%-50%', '51%-60%', '61%-70', '71%-80', '81%-90%', '91%-100%'],
         datasets: [
           {
-            label: 'Used Self-Check',
             data: [
               11,
               19,
@@ -55,7 +54,6 @@ class App extends Component {
         labels: ['40%-50%', '51%-60%', '61%-70', '71%-80', '81%-90%', '91%-100%'],
         datasets: [
           {
-            label: 'Used Self-Check',
             data: [
               15,
               23,
@@ -102,7 +100,7 @@ class App extends Component {
       {x: 4, y: 94},
       {x: 5, y: 98},
       {x: 6, y: 91}
-    ]
+    ];
     return (
       <div className="App">
         <div className="App-header">
@@ -115,8 +113,22 @@ class App extends Component {
             <HorizontalGridLines />
             <XAxis tickTotal={6} tickFormat={x => `Quiz  ${x}`} tickLabelAngle={-38} />
             <YAxis tickTotal={10} tickFormat={y => `${y}%`} />
-            <VerticalBarSeries data={data} color="#007A7C"/>
-            <VerticalBarSeries data={second} color="#00FFFF"/>
+            <VerticalBarSeries data={data} color="#007A7C"
+              onNearestX={(datapoint, event)=>{
+                  console.log("whoa, data", datapoint.y);
+              }}
+              onValueClick={(datapoint, event)=>{
+                console.log("i'm going to route you");
+              }}/>
+            <VerticalBarSeries data={second} color="#00FFFF"
+              onNearestX={(datapoint, event)=>{
+                  console.log("whoa, data", datapoint.y);
+              }}
+              onValueClick={(datapoint, event)=>{
+                <a href="https://www.youtube.com/watch?v=Sy5wpB8uT7Y">Mhm</a>
+                console.log("i'm going to route you");
+              }}
+            />
             <LineMarkSeries data={avg} color="orange" />
           </XYPlot>
         </div>
