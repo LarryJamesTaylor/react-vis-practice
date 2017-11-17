@@ -105,7 +105,7 @@ class App extends Component {
       <div className="App">
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <h2>That Data-Vis Life</h2>
+          <h2>Data Visualization Demonstration</h2>
         </div>
         <div className="Chart">
           <XYPlot height={400} width={500}>
